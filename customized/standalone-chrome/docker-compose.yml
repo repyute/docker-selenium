@@ -1,0 +1,15 @@
+version: '3'
+services:
+  selenium:
+    image: seleniarm/standalone-chromium:4.5.3-20221025
+    container_name : kick-sele
+    hostname: kick-sele
+    environment:
+      - VNC_NO_PASSWORD=1
+      - SE_NODE_SESSION_TIMEOUT=120
+    ports:
+      - "4444:4444"
+      - "7900:7900"
+      - "5900:5900"
+    restart: always
+    shm_size: '2gb'
