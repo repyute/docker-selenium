@@ -1,5 +1,6 @@
 #FROM selenium/node-chrome:4.1.2-20220227
-FROM selenium/node-chrome:4.1.2-20220317
+#FROM selenium/standalone-chrome:4.1.2
+FROM seleniarm/standalone-chromium:4.1.2-20220227
 
 LABEL authors=Reputians
 
