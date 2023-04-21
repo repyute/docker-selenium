@@ -6,7 +6,7 @@ if [ ! -z "$SE_OPTS" ]; then
   echo "Appending Selenium options: ${SE_OPTS}"
 fi
 
-/opt/bin/generate_config
+#/opt/bin/generate_config
 
 echo "Selenium Grid Standalone configuration: "
 cat /opt/selenium/config.toml

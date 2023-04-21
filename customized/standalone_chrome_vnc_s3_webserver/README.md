@@ -2,4 +2,4 @@
 
 ## Commands
 
-docker build -t node-chrome-standalone-vnc-api -f Dockerfile .
+docker build -t node-chrome-standalone-vnc-api -f standalone_chrome_vnc_s3_webserver/Dockerfile .
