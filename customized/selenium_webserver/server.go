@@ -52,10 +52,10 @@ func main() {
 	e.GET("/", func(ctx echo.Context) error {
 		return ctx.JSON(http.StatusOK, Heartbeat())
 	})
-	e.Any("/echo/path", handlers.EchoPath)
-	e.Any("/vnc/restart", handlers.VncRestart)
-	e.Any("/vnc/stop", handlers.VncStop)
-	e.Any("/sessions/clear", handlers.ClearChromeSessions)
+	e.GET("/echo/path", handlers.EchoPath)
+	e.GET("/vnc/restart", handlers.VncRestart)
+	e.GET("/vnc/stop", handlers.VncStop)
+	e.GET("/sessions/clear", handlers.ClearChromeSessions)
 
 	if err := e.Start(fmt.Sprintf("%s:%s", *host, *port)); err != nil {
 		fmt.Println("Failed to start server!", err)
