@@ -47,6 +47,7 @@ func ClearChromeSessions(c echo.Context) error {
 
 func VncRestart(c echo.Context) error {
 	uid := uuid.New().String()
+
 	out1, err := Execute("kill $(ps aux | grep 'x11vnc' | awk '{print $2}')")
 	if err != nil {
 		fmt.Println(err.Error())
@@ -64,7 +65,17 @@ func VncRestart(c echo.Context) error {
 		return c.JSON(http.StatusInternalServerError, err.Error())
 	}
 
-	out := out1 + "\n" + out2 + "\n" + out3
+	out4, err := Execute("kill $(ps aux | grep 'chromium' | awk '{print $2}')")
+	if err != nil {
+		fmt.Println("clearing chromium sessions", err.Error())
+	}
+
+	out5, err := Execute("kill $(ps aux | grep 'chrome' | awk '{print $2}')")
+	if err != nil {
+		fmt.Println("clearing chrome sessions", err.Error())
+	}
+
+	out := out1 + "\n" + out2 + "\n" + out3 + "\n" + out4 + "\n" + out5
 	return c.JSON(http.StatusOK, VncRestartForm{
 		Password: &uid,
 		Output:   &out,

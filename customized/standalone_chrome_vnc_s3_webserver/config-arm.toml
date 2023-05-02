@@ -1,0 +1,13 @@
+[network]
+relax-checks = true
+
+[node]
+session-timeout = "120"
+override-max-sessions = false
+detect-drivers = false
+max-sessions = 1
+
+[[node.driver-configuration]]
+display-name = "chromium"
+stereotype = '{"browserName": "chromium", "browserVersion": "", "platformName": "Linux"}'
+max-sessions = 1

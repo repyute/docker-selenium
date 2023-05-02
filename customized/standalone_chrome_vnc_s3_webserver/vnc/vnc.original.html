@@ -59,7 +59,7 @@
 </div>
 
 <!-- noVNC Control Bar -->
-<div id="noVNC_control_bar_anchor" class="noVNC_vcenter" style="visibility: hidden">
+<div id="noVNC_control_bar_anchor" class="noVNC_vcenter">
 
     <div id="noVNC_control_bar">
         <div id="noVNC_control_bar_handle" title="Hide/Show the control bar"><div></div></div>
@@ -338,12 +338,4 @@
     <source src="app/sounds/bell.mp3" type="audio/mpeg">
 </audio>
 </body>
-<script>
-    window.addEventListener('CUSTOM_CANVAS_CREATED', function() {
-        console.log("Event captured CUSTOM_CANVAS_CREATED")
-        console.log("Initial", document.activeElement)
-        document.querySelector('#noVNC_keyboardinput').focus();
-        console.log("Final", document.activeElement)
-    })
-</script>
 </html>

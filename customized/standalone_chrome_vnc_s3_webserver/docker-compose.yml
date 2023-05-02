@@ -1,12 +1,12 @@
 version: '3'
 services:
   selenium:
-    image: node-chrome-standalone-vnc-api:latest
+    image: 686143527223.dkr.ecr.ap-south-1.amazonaws.com/selenium-service:1.0.1
     container_name : kick-sele
     hostname: kick-sele
     environment:
 #      - VNC_NO_PASSWORD=1
-      - SE_NODE_SESSION_TIMEOUT=5
+      - SE_NODE_SESSION_TIMEOUT=120
     ports:
       - "4444:4444"
       - "7900:7900"
